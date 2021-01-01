@@ -25,4 +25,5 @@ npm run start
 | [@aayush-05](https://github.com/aayush-05)           | Design + Fullstack                 |
 | [@vaishali614](https://github.com/vaishali614)       | Design + Frontend Development      |
 | [@praveenscience](https://github.com/praveenscience) | Frontend Development               |
-| [@Manvityagi](https://github.com/Manvityagi)         | Backend Development + Documentation |
+| [@Manvityagi](https://github.com/Manvityagi)         | Backend Development + Documentation|
+| [@Manvityagi](https://github.com/diegoareval/)         | FullStack                         |
