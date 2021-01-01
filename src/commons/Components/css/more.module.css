@@ -1,0 +1,17 @@
+.knowMore {
+    background-color: #008dc8;
+    border: none;
+    color: #fff;
+    text-align: center;
+    border-radius: 50px;
+    font-size: 16px;
+    padding: 5px 10px 5px 10px;
+    margin-top: 5px;
+    position: absolute;
+    float: left;
+    transition: all 0.5s;
+    cursor: pointer;
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.7);
+    top: 140%;
+    left: 35%;
+  }
