@@ -22,8 +22,8 @@ export default class Impact extends Component {
               impact={{
                 name: <FormattedMessage id="oportunities" />,
                 imgUrl: "image1.svg",
-                para1: "Conocer las oportunidades idoneas",
-                para2: "en el momento adecuado!",
+                para1:<FormattedMessage id="opportunities.para1" />,
+                para2:<FormattedMessage id="opportunities.para2" />,
               }}
             />
             <ImpactCard
