@@ -1,8 +1,10 @@
 import React from "react";
 import styles from "../Css/Navbar.module.css";
 import { Navbar, Nav } from "react-bootstrap";
+import Selector from "../Select";
+import {FormattedMessage} from "react-intl"
 
-export default function navbar() {
+const navbar = () => {
   return (
     <Navbar fixed="top" bg="light" expand="lg" className={styles.NavBar}>
       <Navbar.Brand className={styles.Logo}>
@@ -10,15 +12,20 @@ export default function navbar() {
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
+      <Nav.Item style={{width: "150px"}}>
+        <Selector/>
+        </Nav.Item>
         <Nav className="ml-auto">
           <Nav.Link active href="/">
-            Inicio
+            <FormattedMessage id="nav.home" />
           </Nav.Link>
-          <Nav.Link href="/">Quienes somos</Nav.Link>
-          <Nav.Link href="/">Que hacemos?</Nav.Link>
-          <Nav.Link href="/">Contactanos</Nav.Link>
+          <Nav.Link href="/"><FormattedMessage id="nav.we" /></Nav.Link>
+          <Nav.Link href="/"><FormattedMessage id="nav.do" /></Nav.Link>
+          <Nav.Link href="/"><FormattedMessage id="nav.contact" /></Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
   );
 }
+
+export default navbar;

@@ -4,6 +4,7 @@ import { Container, Row, Col, Jumbotron, Image } from "react-bootstrap";
 import code from "../assets/code.svg";
 import girl from "../assets/girl.svg";
 import smallscreen from "../assets/smallscreen.png";
+import { FormattedMessage } from "react-intl";
 
 export default function Banner() {
   return (
@@ -19,7 +20,7 @@ export default function Banner() {
               <span style={{ color: "#008dc8" }}> metas </span>
             </h1>
             <div className={styles.rectangle} />
-            <button className={styles.Button}>Quienes Somos</button>
+            <button className={styles.Button}><FormattedMessage id="nav.we"/></button>
             <br className={styles.set} />
             <br className={styles.align} />
             <br className={styles.align} />
