@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import Select from 'react-select';
-import LanguageContext from '../contexts/LanguageProvider';
+import LanguageContext from '../contexts/LanguageContext';
 import { options } from '../service/options';
 const Selector = ()=> {
     const {lang, setLang} = useContext(LanguageContext);
