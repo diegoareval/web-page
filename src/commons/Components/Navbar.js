@@ -3,6 +3,7 @@ import styles from "../Css/Navbar.module.css";
 import { Navbar, Nav } from "react-bootstrap";
 import Selector from "../Select";
 import {FormattedMessage} from "react-intl"
+import ToggleTheme from "../ToggleTheme";
 
 const navbar = () => {
   return (
@@ -14,6 +15,9 @@ const navbar = () => {
       <Navbar.Collapse id="responsive-navbar-nav">
       <Nav.Item style={{width: "150px"}}>
         <Selector/>
+        </Nav.Item>
+        <Nav.Item style={{width: "100px", marginTop: "10px"}}>
+        <ToggleTheme/>
         </Nav.Item>
         <Nav className="ml-auto">
           <Nav.Link active href="/">
