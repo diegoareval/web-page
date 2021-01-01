@@ -17,6 +17,7 @@ import ThemeContext from "./contexts/ThemeContext";
 const App = () => {
   const [lang, setLang] = useState(options[1]);
   const [theme, setTheme] = useState(LIGTH);
+  console.log(theme);
   const styles = theme===LIGTH? {color: ligthTheme.secondaryColor, background: ligthTheme.primaryColor}: {color: darkTheme.secondaryColor, background: darkTheme.primaryColor}
   return (
     <LanguageContext.Provider
