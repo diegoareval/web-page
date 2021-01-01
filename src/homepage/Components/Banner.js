@@ -16,16 +16,18 @@ export default function Banner() {
         <Row>
           <Col md={6} lg={7}>
             <h1 className={styles.heading}>
-              Ayudamos a cumplir <br className={styles.align} /> tus
-              <span style={{ color: "#008dc8" }}> metas </span>
+            <FormattedMessage id="banner.help1" /> <br className={styles.align} /> <FormattedMessage id="banner.help2" />
+              <span style={{ color: "#008dc8" }}> <FormattedMessage id="banner.help3" /> </span>
             </h1>
             <div className={styles.rectangle} />
-            <button className={styles.Button}><FormattedMessage id="nav.we"/></button>
+            <button className={styles.Button}>
+              <FormattedMessage id="nav.we" />
+            </button>
             <br className={styles.set} />
             <br className={styles.align} />
             <br className={styles.align} />
             <button style={{ marginLeft: "80px" }} className={styles.Button}>
-              Unete a este equipo
+              <FormattedMessage id="banner.join" />
             </button>
           </Col>
           <Col md={6} lg={5}>
@@ -36,20 +38,20 @@ export default function Banner() {
       </Container>
       <Container className={styles.containersmall} fluid>
         <h1 style={{ textAlign: "center" }} className={styles.heading}>
-        Ayudamos a cumplir <br className={styles.align} /> tus
-          <span style={{ color: "#008dc8" }}> metas </span>
+        <FormattedMessage id="banner.help1" /> <br className={styles.align} /> <FormattedMessage id="banner.help2" />
+          <span style={{ color: "#008dc8" }}> <FormattedMessage id="banner.help3" /> </span>
           <div className={styles.Rectsmall} />
         </h1>
         <Image
           className="justify-content-md-center"
           style={{ maxWidth: "90%" }}
           src={smallscreen}
-          alt="girl code"
+          alt="smart"
           fluid
         />
         <br />
         <br />
-        <button className={styles.Button}>Quienes Somos</button>
+        <button className={styles.Button}><FormattedMessage id="nav.we" /></button>
       </Container>
     </Jumbotron>
   );

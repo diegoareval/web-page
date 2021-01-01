@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Jumbotron, Container, Row } from "react-bootstrap";
 import ImpactCard from "./ImpactCard";
 import styles from "../Css/Impact.module.css";
+import { FormattedMessage } from "react-intl";
 
 export default class Impact extends Component {
   render() {
@@ -9,8 +10,8 @@ export default class Impact extends Component {
       <Jumbotron style={{ backgroundColor: "#ffffff" }}>
         <Container fluid="sm">
           <h1 className={styles.Heading}>
-            Como estamos creando{" "}
-            <span style={{ color: "#008dc8" }}>Impacto</span>?
+          <FormattedMessage id="impact.creating" />
+            <span style={{ color: "#008dc8" }}><FormattedMessage id="impact.impact" /></span>?
           </h1>
 
           <Row
@@ -19,7 +20,7 @@ export default class Impact extends Component {
           >
             <ImpactCard
               impact={{
-                name: "Oportunidades",
+                name: <FormattedMessage id="oportunities" />,
                 imgUrl: "image1.svg",
                 para1: "Conocer las oportunidades idoneas",
                 para2: "en el momento adecuado!",
@@ -27,10 +28,10 @@ export default class Impact extends Component {
             />
             <ImpactCard
               impact={{
-                name: "Ruta",
+                name: <FormattedMessage id="path" />,
                 imgUrl: "image2.svg",
-                para1: "Aprender todo",
-                para2: "de la forma adecuada!",
+                para1: <FormattedMessage id="path.para1" />,
+                para2:<FormattedMessage id="path.para2" />,
               }}
             />
             <hr className={styles.line1} />

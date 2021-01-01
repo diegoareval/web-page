@@ -3,14 +3,15 @@ import { Jumbotron, Container, Image, Row, Col } from "react-bootstrap";
 import styles from "../Css/AboutUs.module.css";
 import AboutUsImg from "../assets/AboutUsImg.png";
 import More from "../../commons/Components/More";
+import { FormattedMessage } from "react-intl";
 
 export default function AboutUs() {
   return (
     <Jumbotron style={{ paddingTop: "0px", backgroundColor: "#ffffff" }} fluid>
       <Container>
         <h1 className={styles.heading}>
-          <span className={styles.About}>Quienes</span>
-          <span className={styles.Us}>Somos</span>
+          <span className={styles.About}><FormattedMessage id="about.who1" /></span>
+          <span className={styles.Us}><FormattedMessage id="about.who2" /></span>
         </h1>
         <Row>
           <Col md={"auto"} lg={7}>
