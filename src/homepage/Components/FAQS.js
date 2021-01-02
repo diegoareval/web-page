@@ -1,38 +1,36 @@
-import React, { Component } from "react";
+import React, { useState, useContext } from "react";
 import FAQCard from "./FAQCard";
 import Data from "./FAQData";
 import styles from "../Css/FAQS.module.css";
 import { Container, Row } from "react-bootstrap";
 import { FormattedMessage } from "react-intl";
+import { LIGTH } from "../../utils/theme";
+import ThemeContext from "../../contexts/ThemeContext";
 
-export default class FAQS extends Component {
-  constructor() {
-    super();
-    this.state = {
-      cards: Data,
-    };
-    this.handleChange = this.handleChange.bind(this);
-  }
+const FAQS= () => {
+  const [cards, setCards] = useState(Data)
+  const {theme} = useContext(ThemeContext)
+  const background = theme===LIGTH?"#ffffff":"#1d3040"
 
-  handleChange(id) {
-    const oldcards = [...this.state.cards];
-    const cards = oldcards.map((c) => {
+  const handleChange = (id) => {
+    const oldcards = [...cards];
+    const nCards = oldcards.map((c) => {
       const upc = { ...c };
       if (c.id === id) {
         upc.open = !upc.open;
       }
       return upc;
     });
-    this.setState({ cards });
+    setCards(nCards)
   }
 
-  render() {
-    const FAQCards = this.state.cards.map((item) => (
-      <FAQCard key={item.id} item={item} handleChange={this.handleChange} />
+
+    const FAQCards = cards.map((item) => (
+      <FAQCard key={item.id} item={item} handleChange={handleChange} />
     ));
 
     return (
-      <div style={{ marginBottom: "100px" }}>
+      <div style={{ marginBottom: "100px", background: background }}>
         <Container sm="fluid">
           <h1 className={`${styles.head}`}>
             <FormattedMessage id="answer.title1" />
@@ -48,4 +46,6 @@ export default class FAQS extends Component {
       </div>
     );
   }
-}
+
+  export default FAQS
+

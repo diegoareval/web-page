@@ -1,14 +1,16 @@
-import React from "react";
+import React, {useContext} from "react";
 import styles from "../Css/Banner.module.css";
 import { Container, Row, Col, Jumbotron, Image } from "react-bootstrap";
-import code from "../assets/code.svg";
-import girl from "../assets/girl.svg";
-import smallscreen from "../assets/smallscreen.png";
 import { FormattedMessage } from "react-intl";
+import imgCoding from "../assets/coding.svg"
+import Codeboy from "../assets/code1.svg"
+import ThemeContext from "../../contexts/ThemeContext";
+import { LIGTH } from "../../utils/theme";
 
-export default function Banner() {
+const Banner =() =>{
+  const {theme} = useContext(ThemeContext)
   return (
-    <Jumbotron className={styles.Jumbotron} fluid>
+    <Jumbotron className={theme===LIGTH?styles.Jumbotron:styles.Jumbotron_dark} fluid>
       <br />
       <br />
       <br />
@@ -31,8 +33,8 @@ export default function Banner() {
             </button>
           </Col>
           <Col md={6} lg={5}>
-            <Image className={styles.code} src={code} alt="code" fluid />
-            <Image className={styles.girl} src={girl} alt="girl" fluid />
+            <Image className={styles.code} src={imgCoding} alt="code" fluid />
+            <Image className={styles.girl} src={Codeboy} alt="girl" fluid />
           </Col>
         </Row>
       </Container>
@@ -45,7 +47,7 @@ export default function Banner() {
         <Image
           className="justify-content-md-center"
           style={{ maxWidth: "90%" }}
-          src={smallscreen}
+          src={imgCoding}
           alt="smart"
           fluid
         />
@@ -56,3 +58,5 @@ export default function Banner() {
     </Jumbotron>
   );
 }
+
+export default Banner

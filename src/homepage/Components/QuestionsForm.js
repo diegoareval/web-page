@@ -9,8 +9,9 @@ import {
   Button,
 } from "react-bootstrap";
 import styles from "../Css/QuestionsForm.module.css";
-import questionsForm from "../assets/questionsForm.png";
 import { FormattedMessage } from "react-intl";
+import QuestionImg from "../assets/questions.svg"
+import { LIGTH } from "../../utils/theme";
 
 export default class QuestionsForm extends Component {
   constructor(props) {
@@ -21,8 +22,11 @@ export default class QuestionsForm extends Component {
       lastName: "",
       email: "",
       question: "",
+      
     };
+    
   }
+  
 
   handleChange = (event) => {
     let itemValue = event.target.value;
@@ -46,9 +50,11 @@ export default class QuestionsForm extends Component {
 
   render() {
     const { firstName, lastName, email, question } = this.state;
+    const {theme} = this.props
+    console.log(theme);
 
     return (
-      <Jumbotron style={{ paddingTop: "0px", backgroundColor: "#ffffff" }}>
+      <Jumbotron style={{ paddingTop: "0px", backgroundColor:theme===LIGTH?"#ffffff":"#1d3040" }}>
         <Container fluid="sm">
           <h1 className={styles.Heading}>
             {" "}
@@ -63,10 +69,10 @@ export default class QuestionsForm extends Component {
             style={{ marginTop: "50px" }}
           >
             <Col md={"auto"} lg={6}>
-              <Image src={questionsForm} alt="QuestionsForm" fluid />
+              <Image src={QuestionImg} alt="QuestionsForm" fluid  />
             </Col>
             <Col lg={5}>
-              <Form onSubmit={this.handleSubmit}>
+              <Form onSubmit={this.handleSubmit} style={{paddingTop: "20px"}}>
                 <Form.Group>
                   <FormattedMessage id="contact.name">
                     {(msg) => (

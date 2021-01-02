@@ -10,14 +10,13 @@ import Footer from "./commons/Components/Footer";
 import { IntlProvider } from "react-intl";
 import messages from "./locale/messages";
 import { options } from "./service/options";
-import { DARK, darkTheme, LIGTH, ligthTheme } from "./utils/theme";
+import { darkTheme, LIGTH, ligthTheme } from "./utils/theme";
 import LanguageContext from "./contexts/LanguageContext";
 import ThemeContext from "./contexts/ThemeContext";
 
 const App = () => {
   const [lang, setLang] = useState(options[1]);
   const [theme, setTheme] = useState(LIGTH);
-  console.log(theme);
   const styles = theme===LIGTH? {color: ligthTheme.secondaryColor, background: ligthTheme.primaryColor}: {color: darkTheme.secondaryColor, background: darkTheme.primaryColor}
   return (
     <LanguageContext.Provider
@@ -35,7 +34,7 @@ const App = () => {
             <Impact />
             <Testimonial />
             <FAQS />
-            <QuestionsForm />
+            <QuestionsForm theme={theme} />
             <Footer />
           </div>
         </IntlProvider>

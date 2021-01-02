@@ -4,10 +4,10 @@ export const DARK = "DARK"
 
 export const ligthTheme = {
     primaryColor: "white",
-    secondaryColor: "black"
+    secondaryColor: "#1d3040"
 }
 
 export const  darkTheme = {
-    primaryColor: "black",
+    primaryColor: "#1d3040",
     secondaryColor: "white"
 }

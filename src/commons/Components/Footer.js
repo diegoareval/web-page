@@ -1,11 +1,15 @@
-import React from "react";
+import React, {useContext} from "react";
+import ThemeContext from "../../contexts/ThemeContext";
+import { LIGTH } from "../../utils/theme";
 import "./css/footer.css";
 
 export default function Footer() {
+  const {theme} = useContext(ThemeContext)
+  const background = theme===LIGTH?"#ffffff":"#1d3040"
+  // #b2ffff
   return (
     <>
-      <div class="content"></div>
-      <footer>
+      <footer style={{background: `${background}`}}>
         <div class="container">
           <h3>Devs Software</h3>
         </div>

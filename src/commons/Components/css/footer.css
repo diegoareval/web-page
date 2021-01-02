@@ -58,8 +58,9 @@ footer .wave svg {
   animation: footer-wave 20s linear infinite;
 }
 footer .wave svg * {
-  fill: #008dc8;
+  fill: #51D1F6;
 }
+
 
 @keyframes footer-wave {
   0% {

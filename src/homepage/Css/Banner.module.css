@@ -2,6 +2,11 @@
   padding-bottom: 60px;
   background-color: #fff;
 }
+
+.Jumbotron_dark {
+  padding-bottom: 60px;
+  background-color: #1d3040 !important;
+}
 .heading {
   font-family: "Arial";
   font-weight: normal;

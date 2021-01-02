@@ -1,13 +1,16 @@
-import React, { Component } from "react";
+import React, { useContext } from "react";
 import { Jumbotron, Container, Row } from "react-bootstrap";
 import ImpactCard from "./ImpactCard";
 import styles from "../Css/Impact.module.css";
 import { FormattedMessage } from "react-intl";
+import { LIGTH } from "../../utils/theme";
+import ThemeContext from "../../contexts/ThemeContext";
 
-export default class Impact extends Component {
-  render() {
+const Impact=()=> {
+  const {theme} = useContext(ThemeContext)
+  const background = theme===LIGTH?"#ffffff":"#1d3040"
     return (
-      <Jumbotron style={{ backgroundColor: "#ffffff" }}>
+      <Jumbotron style={{ backgroundColor: background }}>
         <Container fluid="sm">
           <h1 className={styles.Heading}>
           <FormattedMessage id="impact.creating" />
@@ -39,5 +42,6 @@ export default class Impact extends Component {
         </Container>
       </Jumbotron>
     );
-  }
 }
+
+export default Impact;
