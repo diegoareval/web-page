@@ -13,7 +13,7 @@ export default function Footer() {
         <div class="container">
           <h3>Devs Software</h3>
         </div>
-        <div class="wave">
+        <div class={theme===LIGTH?"wave_dark": "wave"}>
           <svg
             width="516px"
             height="63px"

@@ -70,3 +70,42 @@ footer .wave svg * {
     transform: translate3d(-50%, 0, 0);
   }
 }
+
+/*dark*/
+
+footer .wave_dark {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 20%;
+  z-index: 1;
+  overflow: hidden;
+}
+footer .wave_dark:after {
+  content: "";
+  display: block;
+  background: #E4BDB5;
+  width: 100%;
+  height: 100%;
+}
+footer .wave_dark svg {
+  vertical-align: top;
+  margin-bottom: -5px;
+  width: 800%;
+  height: auto;
+  animation: footer-wave 20s linear infinite;
+}
+footer .wave_dark svg * {
+  fill: #008dc8;
+}
+
+
+@keyframes footer-wave {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
