@@ -8,15 +8,25 @@ const Selector = ()=> {
     setLang(selectedOption)
   };
 
+  const colourStyles = {
+    option: (styles, { data, isDisabled, isFocused, isSelected }) => {
+      // const color = chroma(data.color);
+      console.log({ data, isDisabled, isFocused, isSelected });
+      return {
+        ...styles,
+        // backgroundColor: isFocused ? "#999999" : null,
+        color: "#333333"
+      };
+    }
+  };
+
     return (
       <Select
       placeholder={"Elija Idioma"}
-      styles={{
-          width: "70px"
-      }}
         value={lang}
         onChange={handleChange}
         options={options}
+        styles={colourStyles}
       />
     );
   }
