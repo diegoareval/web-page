@@ -11,6 +11,7 @@ import {
 import styles from "../Css/QuestionsForm.module.css";
 import { FormattedMessage } from "react-intl";
 import QuestionImg from "../assets/questions.svg"
+import questionImgLigth from "../assets/question2.svg"
 import { LIGTH } from "../../utils/theme";
 
 export default class QuestionsForm extends Component {
@@ -37,9 +38,6 @@ export default class QuestionsForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    alert(
-      `${this.state.firstName} ${this.state.lastName} ${this.state.email} ${this.state.question}`
-    );
     this.setState({
       firstName: "",
       lastName: "",
@@ -52,7 +50,7 @@ export default class QuestionsForm extends Component {
     const { firstName, lastName, email, question } = this.state;
     const {theme} = this.props
     console.log(theme);
-
+   
     return (
       <Jumbotron style={{ paddingTop: "0px", backgroundColor:theme===LIGTH?"#ffffff":"#1d3040" }}>
         <Container fluid="sm">
@@ -69,7 +67,7 @@ export default class QuestionsForm extends Component {
             style={{ marginTop: "50px" }}
           >
             <Col md={"auto"} lg={6}>
-              <Image src={QuestionImg} alt="QuestionsForm" fluid  />
+              <Image src={theme===LIGTH?questionImgLigth:QuestionImg} alt="QuestionsForm" fluid  />
             </Col>
             <Col lg={5}>
               <Form onSubmit={this.handleSubmit} style={{paddingTop: "20px"}}>
